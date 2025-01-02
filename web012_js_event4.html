@@ -30,6 +30,10 @@
     <h4>Step1. 알림창</h4>
       <script>
     // 작업위치1
+    //alert("알림내용")
+    //prompt("질문", "질문에 대한 예시 답변");
+    // let name = prompt("당신의 이름은?", "예)홍길동" ); //let을 사용해서 질문의 답을 변수에 담을 수 있음.
+    // alert("당신의 이름은" + name + "입니다.");
       </script>
   </div>
   <!--     -->
@@ -39,6 +43,8 @@
     <h4>EX</h4>
       <script>
         // 작업위치2
+        // let age = prompt("당신의 나이는?", "예)20");
+        // alert("당신의 나이는 " + age + "세 입니다.");
       </script>
   </div>
 
@@ -50,18 +56,21 @@
   <h3  class="card-header">004. EVENT- Step2. EVENT</h3>
   <div class="card-body">
     <h4>Step2. EVENT</h4>
-    <!-- 작업위치3 -->
+    <!-- 작업위치3 이벤트 작업을 걸기위해서는 이벤트 대상, 이벤트, 이벤트핸들러를 알아야 함. -->
     <input type="button" value="EVENT1"
-		title="버튼을 클릭하세요.(test)" class="btn btn-outline-primary"      />
+		title="버튼을 클릭하세요.(test)" class="btn btn-outline-primary"
+    onclick="alert('HahA')"      />
+    
   </div>
   <!--     -->
   <!--     -->
   <hr/>
   <div class="card-body">
     <h4>EX</h4>
-    <input type="button"  value="DOG-멍멍"  title="버튼1"    class="btn btn-success" />
-    <input type="button"  value="CAT-야옹"  title="버튼2"    class="btn btn-success" />
-    <input type="button"  value="FIVE-COUNT"  title="버튼3"   class="btn btn-success" />
+    <!-- 버튼: 이벤트 대상, 누르면: 이벤트, 멍멍: 이벤트핸들러 -->
+    <input type="button"  value="DOG-멍멍"  title="버튼1"    class="btn btn-success"  onclick="alert('멍멍')"/>
+    <input type="button"  value="CAT-야옹"  title="버튼2"    class="btn btn-success"  onclick="alert('야옹')"/>
+    <input type="button"  value="FIVE-COUNT"  title="버튼3"   class="btn btn-success" onclick="alert('1'),alert('2'),alert('3'),alert('4'),alert('5')"/>
   </div>
  </div>
   <!--     -->
@@ -70,12 +79,32 @@
   <div class="container card  my-3">
     <h3  class="card-header">004. EVENT- Step2. EVENT mouseenter/mouseleave</h3>
     <div class="card-body">
-      <h4>Step3. EVENT - mouseenter/mouseleave</h4>
+      <h4>Step3. EVENT - mouseenter/mouseleave</h4> <!-- mouseenter: 마우스를 올려 놓을 때 / mouseleave: 마우스가 내려 갈 때때 -->
       <div id="box"    class="alert alert-success">
         <strong>Success!</strong> Java script:)
       </div>
       <script>
       // 작업위치4
+      // 이벤트 대상, 이벤트, 이벤트 핸들러
+      const box = document.querySelector("#box"); //querySelector -> 대상을 찾아옴옴
+      console.log(box);
+      //이벤트 대상
+      box.addEventListener("click", function(clickingbox){
+        console.log(clickingbox);
+        alert("Hello1")
+      } ); // addEventListener -> 이벤트를 여러개 걸 수 있음.
+      box.addEventListener("click", function(clickingbox){
+        console.log(clickingbox);
+        alert("Hello2")
+      } );
+      box.addEventListener("mouseenter", function(clickingbox){
+        box.style.backgroundColor="#ffffff"
+        box.style.textAlign="center"
+      } );
+      box.addEventListener("mouseleave", function(clickingbox){
+        box.style.backgroundColor="#fc4cf4"
+        box.style.textAlign="left"
+      } );
       </script>
     </div>
   </div>

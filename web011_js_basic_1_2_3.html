@@ -107,6 +107,21 @@
     <h4>003. 자료형 , 자료형 확인(typeof)</h4>
     <script>
       // 작업위치4
+      //let data; console.log(data); //data[] <-data라는 공간을 사용 let은 중복으로 이름을 사용하지 못하는데 위에서 이미 전역변수 var로 data라는 이름을 사용하였기 때문에 오류 발생
+      let data1; console.log(data1);
+        data1 = 10; console.log(data1);
+        data1 = 3.14; console.log(data1);
+        data1 = "abc"; console.log(data1);
+        data1 = ["sally", 3, "7.8kg"]; console.log(data1); //배열도 가능.
+        data1 = function() {}; console.log(data1); //리엑트에서 json으로 다시 확인
+
+        data1 = 10;
+        console.log(data1+"10"); //원하는 결과물 : 20
+        console.log(typeof(data1), typeof("10")); //typeof - 자료형 확인
+        console.log(Number(data1) + Number("10")); // console.log(Number(data1) + Number("data1"));
+        console.log(data1 + Number("10")); // Number -> 자료형을 Number로 바꿔줌.
+        console.log(typeof(String(data1))+typeof("10"));
+
     </script>
   </div>
 </div>
