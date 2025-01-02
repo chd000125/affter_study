@@ -1,0 +1,8 @@
+@charset "UTF-8";
+
+#wrap{ background-color: #ccc; }
+#header{ height: 140px;}
+#visual{ height: 642px;}
+#content{ height: 258px;}
+#footer{height: 74px; background-color: #333;}
+.container{ width: 85%; margin: auto;}

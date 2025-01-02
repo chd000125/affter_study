@@ -1,0 +1,29 @@
+@charset "UTF-8";
+#head {display: flex;}
+/*.search{flex: none; margin-left: auto;}
+#logo{flex: none;}*/
+#head h1, #head form{ flex: none;}  /* 확장X, 축소X, width 0% */
+#head h1{ width: 160px; margin: 20px 0;} /* 이미지 파일 가로 사이즈를 보장 */
+#head form{ margin-left: auto;}
+#head form #searchText {width: 480px; height: 30px; text-indent: 10px; margin: 20px 0;}/* margin: 20px 0px 20px -> 위 아래, 0px -> 좌 우*/
+#header form #searchButton {vertical-align: middle; }
+nav li {display:inline-block ; margin: 10px;}
+nav li a {display: inline-block; width:auto; padding: 10px 0 ; font-weight: bold;}
+#visual {background:#000 url("../img/main.jpg") no-repeat center; 
+    position: relative; background-size: cover; /*background-attachment: fixed;*/ }
+    /* attachment: fixed -> 배경화면이 고정되어 움직임. background-size: cover -> 사이즈를 맞게 채움 */
+#visual .visual_desc { position: absolute; top: 15%; right: 75%; width: 15%; background-color: #1570a6; color: white;
+    padding: 17px; border-radius: 20px; transition: all .5s;}
+#visual .visual_desc:hover{ border-radius: 40px; box-shadow: 10px 10px 10px gray;  } /* border-radius -> 모서리를 둥글게 만들어줌 box-shadow -> x축(우측), y축(아래) 그림자 크기 색상 */
+#visual .visual_desc h3 { font-size: 150%; }
+#visual .visual_desc p { margin: 20px 0; }
+#visual .visual_desc a { color: white; }
+#content .container ul{display:flex;}
+#content .container ul li a img:hover{transform: scale(0.9) ;}
+#content .container ul li a img{transition: all 0.5s;}
+#content .container ul li{flex: 1; text-align: center; font-size: 85%; font-weight: bold;
+    overflow:hidden;   text-overflow: ellipsis;  white-space: nowrap; }
+/* overflow:hidden -> 넘치는 컨텐츠 숨기기, text-overflow: ellipsis -> ...표시시   white-space:nowrap -> 문단 한줄로 변경 */
+#footer li{ display: inline-block; margin-right: 5px; }
+#footer { text-align: center; padding-top: 20px;  }
+#footer li a { color: white; }

@@ -1,0 +1,6 @@
+@charset "UTF-8";
+body{font-family: 'Malgun Gothic', dotum, sans-serif; color: black;} /*실질적인 내용은 body에서 부터 시작하기 때문에*/
+	a:link, a:visited{ color: #000;text-decoration: none;} /*link - 방문 전 기본 값, visited: 방문 후 기본 값.*/
+	a:hover, a:focus{color:#f00; text-decoration: underline;} /*hover: 마우스가 올라갔을 때, focus: 선택된 것*/
+	.hidden{position: absolute; left: -9999px;width: 1px;height: 1px; line-height: 0; overflow: hidden;}
+    /*    overflow:hidden 남은공간을 보이지 않게*/
