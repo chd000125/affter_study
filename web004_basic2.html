@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{ margin:0; padding:0;} /* 전체 여백을 제거 */
+    /*
+    1. 컨테이너에 적용하는 속성
+    2. 아이템에 적용하는 속성
+    [   [.item][.item][.item]  ].container
+    */
+     h3{ padding:2%; border-left:10px solid burlywood;  background-color: beige;}
+    .container{   background-color:#ccc;    width:80%;  margin: 2% auto;  padding:2%; }
+    .item{  background-color:darkturquoise; color:white; padding:2%  }
+
+    .i1{ background-color:darkturquoise;  }
+    .i2{ background-color:deepskyblue;  }
+    .i3{ background-color:blueviolet;  }
+
+    /* ver-1. flex(width만), block(100%) 감싸는 BOX */
+    .c1{display: flex;  }
+    .c2{display: block; }
+    /* ver-2. 방향 */
+    .c3{display: flex; flex-direction: row; } /*direction -> 방향 row -> 가로 column -> 세로*/
+    .c4{display: flex; flex-direction: column; }
+    .c5{display: flex; flex-direction: row-reverse; }
+    .c6{display: flex; flex-direction: column-reverse; }
+    /* ver-3  스크롤 없는 100% 레이아웃 */
+    html,body{   height: 100%; }
+    .c7{display: flex; flex: 1;} /* display:flex가 아닌 그냥 flex:1은 확장,축소 flex:0은 기본크기*/
+    .c7 .i1{ display:flex; width: 200px; flex: none;}
+    .c7 .i2{display: flex; flex: 1;    }
+    /* ver-4  네비게이션 */
+    .c8{display: flex; } /*감싸는 box에 flex를 부여한 후에 그 안에 속성에는 flex를 제거*/
+    .c8 li{flex:none;} /*확장,축소 없이 기본크기를 사용*/
+    .c8 .i3{margin-left: auto;}
+
+    /* ver-5  footer */
+    .c9 {display: flex; flex-direction:column;  height: 300px;}
+    .c9 .i1 {flex: none; margin-top: auto; }
+
+    /* ver-6  left   center  right */
+    .c10{display: flex; justify-content: space-between;} /* 왼쪽 중앙 오른쪽으로 자동으로 정렬 */
+    .c10 .i1{flex: none;}
+    .c10 .i2{ flex: none;}
+    .c10 .i3{flex: none;}
+
+    /* ver-7  center */
+    .c11 {display: flex;  height: 100px;}
+    .c11 .item {margin: auto;}
+
+    /* ver-8  유동 width */
+    .c12 {display: flex; }
+    .c12 .item{max-width:300px; height: 400px;overflow:hidden; white-space: nowrap; text-overflow: ellipsis;margin-right: 5px; }
+
+    /* ver-9  왼상, 왼하, 오른쪽상, 오른쪽하 */
+    .c13{display: flex; width: 400px; height: 400px; justify-content: space-around; align-content:space-around ; flex-flow: column wrap;}
+    /* flex-flow: column wrap -> 박스에서 벗어났을 때 줄 바꿈 속성 */
+    .c13 .item{width: 140px; height: 140px; margin: 2%;}
+    /* ver-10 가로 세로 비율유지 박스  */
+    .c14{display: flex;}
+    .c14 .item { 
+        display: flex; flex-direction: column; flex-basis: 30%;
+     } /* flex-basis -> 기본 크기 값 설정 */
+
+    </style>
+</head>
+<body>
+<div>
+    <h3>001. display:flex(내용물만큼만), block (가로100%)</h3> <!--flex: 입력의 크기만큼만 공간을 사용,block 가로로 모든 공간을 전부 사용 -->
+    <div class="container c1">
+        <div class="item  i1">aaa</div>
+        <div class="item  i2">bbbbb</div>
+        <div class="item  i3">cc</div>
+    </div>
+
+    <div class="container c2">
+        <div class="item  i1">aaa</div>
+        <div class="item  i2">bbbbb</div>
+        <div class="item  i3">cc</div>
+    </div>
+    <!--                    -->
+    <!--                    -->
+    <h3>002. flex-direction(배치 방향 설정)</h3>
+    <div class="container c3">
+        <div class="item  i1">aaa</div>
+        <div class="item  i2">bbbbb</div>
+        <div class="item  i3">cc</div>
+    </div>
+
+    <div class="container c4">
+        <div class="item  i1">aaa</div>
+        <div class="item  i2">bbbbb</div>
+        <div class="item  i3">cc</div>
+    </div>
+
+    <div class="container c5">
+        <div class="item  i1">aaa</div>
+        <div class="item  i2">bbbbb</div>
+        <div class="item  i3">cc</div>
+    </div>
+
+    <div class="container c6">
+        <div class="item  i1">aaa</div>
+        <div class="item  i2">bbbbb</div>
+        <div class="item  i3">cc</div>
+    </div>
+    <!--                    -->
+    <!--                    -->
+    <h3>003. 스크롤 없는 100% 레이아웃 </h3>
+    <div class="container c7">
+        <div class="item  i1">aaa</div>
+        <div class="item  i2">bbbbb</div>
+    </div>
+    <!--                    -->
+    <!--                    -->
+    <h3>004. 네비게이션 </h3>
+    <div class="container c8">
+        <div class="item  i1">aaa</div>
+        <div class="item  i2">bbbbb</div>
+        <div class="item  i3">cc</div>
+    </div>
+    <!--                    -->
+    <!--                    -->
+    <h3>005. 바닥에 붙는 footer </h3>
+    <div class="container c9">
+        <div class="item  i1">aaa</div>
+    </div>
+    <!--                    -->
+    <!--                    -->
+    <h3>006. left, center, right </h3>
+    <div class="container c10">
+        <div class="item  i1">aaa</div>
+        <div class="item  i2">bbbbb</div>
+        <div class="item  i3">cc</div>
+    </div>
+    <!--                    -->
+    <!--                    -->
+    <h3>007. center </h3>
+    <div class="container c11">
+        <div class="item  i1">aaa</div>
+    </div>
+    <!--                    -->
+    <!--                    -->
+    <h3>008. 유동 width </h3>
+    <div class="container c12">
+        <div class="item  i1">가나다라마바사아자차카타파하가나다라마바사아자차카타파하</div>
+        <div class="item  i2">가나다라마바사</div>
+        <div class="item  i3">가나다라</div>
+        <div class="item  i4">가나다라</div>
+    </div>
+
+    <!--                    -->
+    <!--                    -->
+    <h3>009. 위, 아래로 흐르는 목록 </h3>
+    <div class="container c13">
+        <div class="item  i1">AAA</div>
+        <div class="item  i2">BBB</div>
+        <div class="item  i3">CCC</div>
+        <div class="item  i4">DDD</div>
+    </div>
+
+    <!--                    -->
+    <!--                    -->
+    <h3>010. 가로세로 비율유지 박스 </h3>
+    <div class="container c14">
+        <div class="item  i1">AAA</div>
+        <div class="item  i2">BBB</div>
+        <div class="item  i3">CCC</div>
+        <div class="item  i4">DDD</div>
+    </div>
+
+
+
+
+</div>
+</body>
+</html>

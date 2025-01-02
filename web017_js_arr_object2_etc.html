@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>DBDBIG</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <!--                                    -->
+    <!--                                    -->
+    <!--                                    -->
+    <!--                                    -->
+    <!--                                    -->
+    <div class="p-3 bg-danger text-white ">
+    <h1>009. OBJECT  </h1>
+    <ol>
+        <li>array</li>
+        <li>object</li>
+    </ol>
+    </div><!-- end navi  -->
+
+    <!--                -->
+    <!--                -->
+    <!--                -->
+    <br/>
+    <br/>
+    <br/>
+    <div class="container card  my-3">
+        <h3  class="card-header">EX1 - ARRAY</h3>
+        <pre>
+        Q1. 배열의 이미지 a1.jpg , a2.jpg , a3.jpg , a4.jpg 파일 넣기
+        Q2. #array1 버튼을 클릭하면 a1.jpg, a2.jpg, a3.jpg, a4.jpg 순서대로 이미지경로바뀌기
+        </pre>
+        <p><input type="button"  value="IMG-SHOW"     id="array1"   class="btn btn-danger" /></p>
+        <p class="result r1"><img src="img/a1.jpg" alt=""  style="width:50%"></p>
+        <script>
+
+  //작업위치
+        </script>
+    </div><!-- end container  -->
+
+    <!--                -->
+    <!--                -->
+    <!--                -->
+    <br/>
+    <br/>
+    <br/>
+    <hr/>
+    <div class="container card  my-3">
+        <h3  class="card-header">EX2 - ARRAY</h3>
+
+        <pre>
+        Q1. 배열의 이미지 a1.jpg , a2.jpg 파일 넣기
+        Q2. #array2 버튼을 클릭하면  a1.jpg 라면 a2.jpg로 변경
+                a2.jpg 라면 a1.jpg로 변경
+        </pre>
+        <p><input type="button"  value="A1-A2-CHANGE" id="array2"   class="btn btn-danger" /></p>
+        <p class="result r2"><img src="img/a1.jpg" alt=""   style="width:50%"></p>
+        <script>
+
+  //작업위치
+        </script>
+    </div><!-- end container  -->
+
+    <!--                -->
+    <!--                -->
+    <!--                -->
+    <br/>
+    <br/>
+    <br/>
+    <hr/>
+    <div class="container card  my-3">
+        <h3  class="card-header">EX3 - OBJECT</h3>
+        <pre>
+        Q1. Avengers 생성자만들기
+            no , name, img, show 속성 으로 가짐
+            * no, name은 사용자에게 입력받기
+            * img는  해당 no의 번호로 처리  ->  no가 1이라면 a1.jpg
+        Q2. let iron = new Avengers(1, 'iron');
+            이미지에 마우스를 올리면 해당 이미지 보여주기 a1.jpg
+
+        </pre>
+        <pre>
+        Q3. new Avengers(1, 'iron') , new Avengers(2, 'hulk') , new Avengers(3, 'captain')
+            데이터 이용
+            let teams = [new Avengers(1, 'iron') , new Avengers(2, 'hulk') , new Avengers(3, 'captain')];
+            let trs  = document.querySelectorAll("#avengers_table tbody tr");
+            let tds  = trs[0].querySelectorAll('td');
+        </pre>
+
+        <table  id="avengers_table"  class="table table-bordered  table-striped  table-hover">
+            <caption>2030 학생명단</caption>
+            <colgroup>
+                <col style="width:10%">
+                <col style="width:30%">
+                <col style="width:60%">
+            </colgroup>
+            <thead>
+                <tr><th scope="col">NO</th>
+                    <th scope="col">NAME</th>
+                    <th scope="col">IMG</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>team1</td><td><img src="img/a5.jpg" alt=""   style="width:50%"></td></tr>
+                <tr><td>2</td><td>team2</td><td><img src="img/a5.jpg" alt=""   style="width:50%"></td></tr>
+                <tr><td>3</td><td>team3</td><td><img src="img/a5.jpg" alt=""   style="width:50%"></td></tr>
+            </tbody>
+        </table>
+        <script>
+        //Q1 생성자
+
+        //Q2 데이터준비
+
+            //Q3 view(#avengers_table  tr 안에 각 td)에 데이터 넣기
+            //대상1.   #avengers_table  tr
+            //대상2.   tr안에 있는 td[0] 번호   td[1] 이름
+            //효과1    데이터 넣기 - innerHtml = teams[0].no   console.log(teams[0].no);
+
+            //Q4  이미지에 마우스를 올리면 해당 이미지 보여주기 a1.jpg
+            //대상2.   td[2] 안에  이미지
+
+  //작업위치
+        </script>
+    </div>
+
+    <!--                -->
+    <!--                -->
+    <!--                -->
+    <br/>
+    <br/>
+    <br/>
+    <hr/>
+    <div class="container card  my-3">
+        <h3  class="card-header">009. OBJECT - STEP3. Ajax</h3>
+        <!--     -->
+        <!--     -->
+        <hr/>
+        <div class="card-body">
+          <h4>EX-TEXT   text2.txt</h4>
+          <p><input type="button"  id="xmlHttpRequest2"
+              value="xmlHttpRequest2"  class="btn btn-danger"  onclick="show2()"/></p>
+          <div class="result r2"  id="result2">
+            <table  class="table table-striped table-bordered table-hover">
+              <caption>어벤져스멤버들</caption>
+              <colgroup>
+                <col style="width:20%"/><col style="width:20%"/><col style="width:35%"/><col style="width:25%"/>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" >NAME</th><th scope="col" >AGE</th><th scope="col" >ADDRESS</th><th scope="col" >MOBILE</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+          <script>
+
+  //작업위치
+          </script>
+        </div>
+        <!--     -->
+        <!--     -->
+        <hr/>
+        <div class="card-body">
+          <h4>EX-JSON  -   json2.json 파싱</h4>
+          <p><input type="button"  id="json2"
+              value="xmlHttpRequest2"  class="btn btn-danger"  onclick="show4()"/></p>
+          <div class="result r4"  id="json_result2">
+            <table  class="table table-striped table-bordered table-hover">
+              <caption>어벤져스멤버들</caption>
+              <colgroup>
+                <col style="width:20%"/><col style="width:20%"/><col style="width:35%"/><col style="width:25%"/>
+              </colgroup>
+              <thead>
+                <tr>
+                  <th scope="col" >NAME</th><th scope="col" >AGE</th><th scope="col" >ADDRESS</th><th scope="col" >MOBILE</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+          <script>
+
+            //작업위치
+          </script>
+        </div>
+        <!--     -->
+        <!--     -->
+        <hr/>
+        <div class="card-body">
+          <h4>EX-XML    milk2.xml 파싱</h4>
+          <p><input type="button"  id="xml2"
+              value="xmlHttpRequest2"  class="btn btn-danger"  onclick="show6()"/></p>
+          <div class="result r2"  id="xml_result2">
+            <table  class="table table-striped table-bordered table-hover">
+              <caption>MILKS</caption>
+              <thead>
+                <tr>
+                  <th scope="col" >NAME</th><th scope="col" >PRICE</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+          <script>
+
+  //작업위치
+          </script>
+        </div>
+    </div><!-- end container  -->
+
+
+</body>
+</html>

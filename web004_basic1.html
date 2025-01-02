@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{ margin:0; padding:0;}
+
+     h3{ padding:2%; border-left:10px solid burlywood;  background-color: beige;}
+    .container{   background-color:#efefef;    width:80%;  margin: 2% auto;  padding:2%; }
+
+    /*     배치관련1. float         */
+    /*     배치관련1. float         */
+    .item{background-color: #333;color: white;}
+    .i1{background-color: red;float: left;}
+    .i2{background-color: blue; float: right}
+
+
+    /*     배치관련2. position         */
+    /*     배치관련2. position         */
+    /* 감싸는 부모 p1 (relative) 자식 m2 */
+    .p1 { background-color: aqua;color: white; position: relative; top: -50px; left: 100px;} /*relative -> box자리 유지 absolute -> box자리 유지 안됨.*/
+    .p1 .me{background-color: darkviolet; position: relative; right: 0px; bottom: 0px;} /*.p1 .me -> p1 class 안에 있는 meclass만 사용한다.(중복이름일때 유용) */
+    /*클래스가 p2인 클래스 안에 me를 찾아서 배경색 주기*/
+    .p2 .me{background-color: pink; position: fixed; bottom: 0; right: 0;}
+
+    /*     배치관련3. dispaly         */
+    /*     배치관련3. display         */
+    .d1 li{ display: inline; width: 5000px; }
+    .d2 li{ display: inline-block; width : 500px; background-color: #333;color: white; }
+
+    /*     배치관련4. margin/padding         */
+    /*     배치관련4. margin/padding         */
+    .mp .me{ background-color: aqua; color: black; padding: 10px; margin-left: 100px;} /*padding을 주면 안에 있는 영역이 늘어난다. margin을 주면 바깥에 있는 영역이 늘어난다.*/
+    /*margin과 padding은 top left bottom right로 조절 가능. padding은 따로 지정안하면 전체에 n값만큼 증가*/
+    </style>
+</head>
+<body>
+<div>
+    <h3>001. BLOCK VS INLINE</h3> <!-- BLOCK => 그릇 INLINE => 간장 -->
+    <div class="container">
+        <dl>
+            <dt>box model</dt> <!-- block 과 inline 구분 방법 => width와 height값의 영향이 있는지 없는지, 앞,뒤 줄바꿈있는지, div,h3,p등인지 span,strong,i인지 -->
+            <dd>콘텐츠가 자리하는 영역</dd>
+            <dd><span style="background-color:gold; width: 300px; height: 500px;">블록  </span>요소 - width/height O, 앞뒤줄바꿈 O , div,h3,p</dd>
+            <dd><span>인라인</span>요소  - width/height X, 앞뒤줄바꿈 X , span</dd>
+        </dl>
+    </div>
+
+    <div class="container">
+        <p>Q. img태그는?</p>
+        <p><img src="img/egg.jpg"  alt="블록인지 인라인인지" style="width:50px"/> 너 모야?
+            인라인 - 텍스트(문자)를 꾸미거나 [기능]을 하는 요소 </p>
+    </div>
+    <!--                    -->
+    <!--                    -->
+
+    <h3>002. 배치관련(1) float</h3> <!-- 주의사항 clear:both 왜? -->
+    <div   class="container  f1">
+        <div class="item  i1">LEFT</div>
+        <div class="item  i2">RIGHT</div>
+        <div>ABCDEFCHIG</div>
+    </div>
+    <!--                    -->
+    <!--                    -->
+
+    <h3>003. 배치관련(2) position</h3> <!-- -->
+    <div   class="container position  p1">
+        <p class="me">WHERE I AM?</p>
+    </div>
+    <div   class="container position  p2">
+        <p class="me">WHERE I AM?  position:fixed 브라우저에 콕!</p>
+    </div>
+    <!--                    -->
+    <!--                    -->
+
+    <h3>004. 배치관련(3) display</h3> <!--  -->
+    <div   class="container">
+        <!--  block -->
+        <ul>
+            <li>APPLE</li>
+            <li>banana</li>
+            <li>coconut</li>
+        </ul>
+
+        <hr/>
+        <!--  block -->
+        <ul    class="d1">
+            <li>APPLE</li>
+            <li>banana</li>
+            <li>coconut</li>
+        </ul>
+
+
+        <!--  inline-block -->
+        <ul    class="d2">
+            <li>APPLE</li>
+            <li>banana</li>
+            <li>coconut</li>
+        </ul>
+    </div>
+    <!--                    -->
+    <!--                    -->
+    <!--                    -->
+    <!--                    -->
+
+    <h3>005. 배치관련(4) margin/padding</h3>
+    <div   class="container mp">
+        <p class="me">WHERE I AM?</p>
+    </div>
+
+</div>
+</body>
+</html>

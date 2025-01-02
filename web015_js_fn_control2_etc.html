@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>DBDBIG</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<div class="p-3 bg-danger text-white ">
+  <h1>006. CONTROL</h1>
+  <ol>
+    <li>IF</li>
+    <li>SWITCH</li>
+    <li>FOR/WHILE/DO WHILE</li>
+  </ol>
+</div>
+
+
+<!--                                    -->
+<!--                                    -->
+<div class="container card  my-3">
+  <h3  class="card-header">006. CONTROL - Step1. IF</h3>
+  <div class="card-body">
+    <h4>EX1</h4>
+    <pre>
+      평균을 입력하세요 __입력받기
+      만약 평균이 60점 이상(60점포함)이라면 합격, 아니면 불합격 출력
+      합격에서 평균점수가 60점대라면 ★ 6개,  70점대라면 ★ 7개...
+      평균점수 앞자리수 만큼 ★ 도 같이 출력력
+    </pre>
+    <input type="button" value="ex1"  id="ex1"  title="버튼을 클릭하세요" class="btn btn-danger"      />
+    <script>
+   //작업위치
+    </script>
+  </div>
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX2</h4>
+    <pre>
+      사과 스펠링을 입력하세요 __입력받기
+      만약 사과스펠링을 apple을 입력하면 OK 아니면 NOT OK 출력
+    </pre>
+    <input type="button" value="ex2"  id="ex2"  title="버튼을 클릭하세요" class="btn btn-danger"      />
+    <script>
+  //작업위치
+    </script>
+  </div>
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX3</h4>
+    <pre>
+      사과 스펠링을 적으세요
+      만약 apple	, APPLE	 ,  Apple 이 셋중에 하나라도 입력한게맞다면 ok
+      아니면 not ok
+    </pre>
+    <input type="button" value="ex3"  id="ex3"  title="버튼을 클릭하세요" class="btn btn-danger"      />
+    <script>
+  //작업위치
+    </script>
+  </div>
+
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX4</h4>
+    <pre>
+      어린이의 나이를 입력하세요
+      만약 0~5 사이를 입력했다면 어린이의 나이는 __세입니다.
+      아니라면 0~5세사이만 입력하세요 출력하기
+    </pre>
+    <input type="button" value="ex4"  id="ex4"  title="버튼을 클릭하세요" class="btn btn-danger"      />
+    <script>
+  //작업위치
+    </script>
+  </div>
+
+</div><!-- end card3  -->
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<hr/>
+
+
+
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<div class="container card  my-3">
+  <h3  class="card-header">006. CONTROL - Step2. SWITCH</h3>
+  <div class="card-body">
+    <h4>Step2. SWITCH</h4>
+      <script>
+      /*
+      swtich(  처리하고 싶은 대상    ){
+          case 대상의상태:    처리;  break;
+          case 대상의상태:    처리;  break;
+          case 대상의상태:    처리;  break;
+          default : 기본처리
+      } */
+
+      </script>
+  </div>
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX</h4>
+    <pre>
+      4,5,6 중에 입력하세요
+      4번 월드콘  ,  5번 구구콘 , 6번 설레임 알림창을 띄우시오.
+    </pre>
+    <input type="button" value="switch1"  id="switch1"  title="버튼을 클릭하세요" class="btn btn-danger"      />
+    <script>
+
+  //작업위치
+    </script>
+  </div>
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX2</h4>
+    <pre>
+      a,b,c 중에 입력하세요
+      a또는 A  Apple ,  b또는 B  Banana , c 또는 C Coconut
+    </pre>
+    <input type="button" value="switch2"  id="switch2"  title="버튼을 클릭하세요" class="btn btn-danger"      />
+    <script>
+
+  //작업위치
+    </script>
+  </div>
+</div>
+
+
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<hr/>
+
+
+
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<!--                                    -->
+<div class="container card  my-3">
+  <h3  class="card-header">006. CONTROL - Step3. FOR/WHILE/DO WHILE</h3>
+  <div class="card-body">
+    <h4>Step3. FOR/WHILE/DO WHILE</h4>
+      <script>
+      /*
+        STEP1 for  - 반복횟수 알때
+        for(  초기문; 조건문; 증감문 ){  }
+
+        STEP2 while- 반복횟수 모를때
+        초기문;
+        while(  조건문 ){     증감문;  }
+
+        STEP3 do while- 한번은 실행을 해야할때
+        초기문;
+        do{     증감문;  } while(  조건문 );
+
+        STEP4 향상된 for
+        for( index  in 객체 ){   }*/
+
+  //작업위치
+      </script>
+  </div>
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX</h4>
+    <pre>
+    for, while, do while
+    Q1)		1	2	3	4	5
+    Q2)		5	4	3	2	1
+    Q3)		2	4	6
+    Q4)		1	3	5	7	9
+    Q5)		hello1		hello2		hello3
+    Q6)		hello		hello		hello
+
+    향상된 for , forEach
+    Q7)		const list1 = [1	2	3	4	5];
+    Q8)		const list2 = ['a','b','c','d','e'];
+    </pre>
+    <script>
+      // for, while, do while
+      //A1)		1	2	3	4	5
+
+      //A2)		5	4	3	2	1
+
+      //A3)		2	4	6
+
+      //A4)		1	3	5	7	9
+
+
+      //A5)		hello1		hello2		hello3
+
+      //A6)		hello		hello		hello
+
+        // 향상된 for , forEach
+      //A7)		const list1 = [1	2	3	4	5];
+
+
+      //A8)		const list2 = ['a','b','c','d','e'];
+
+    </script>
+  </div>
+
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>Step3. FOR/WHILE/DO WHILE - break vs  continue </h4>
+    <pre>
+    * break vs  continue
+      break    - 탈출!
+      continue - 탈출!
+
+    * 무한반복
+      for(;;){ 빠져나올조건-break}
+      for(;빠져나올조건;){}
+      while(true){ 빠져나올조건-break}
+      while(빠져나올조건){}
+    </pre>
+    <script>
+
+      //작업위치
+    </script>
+  </div>
+
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX2</h4>
+    <pre>
+      Q 어린이의 나이를 0~5세사이만 입력하세요
+      0~5세가 아니라면 무한반복되게 작성하시오.
+    </pre>
+    <input type="button"  id="age"
+           value="무한반복-어린이나이"   class="btn btn-danger"
+           title="어린이의 나이를 0~5세사이만 입력하세요."
+    />
+    <script>
+
+      //작업위치
+    </script>
+  </div>
+
+  <!--     -->
+  <!--     -->
+  <hr/>
+  <div class="card-body">
+    <h4>EX3</h4>
+    <pre>
+    다음과 같이 계산기 기능을 구현하시오.
+    1. 빈칸검사를 하시오.
+    2. 숫자는
+    0~100 사이의 숫자를 입력받지 못하면 무한반복으로 다시 입력받게 하시오.
+    3. 연산자는
+    +,-,*,/를 입력받지 못하면 무한반복으로 다시 입력받게 하시오.
+    4. 각 연산에 맞게 계산기를 구현하시오. (+,-,*,/)
+    </pre>
+    <form action="" method="post"  id="calc_form">
+      <fieldset>
+      <legend class="myhidden"> 계산기 </legend>
+          <p class="">
+            <input type="button"    class="btn btn-danger"
+                            id="calc" value="계산기시작"  />
+          </p>
+          <p class="my-4">
+            <label for="num1"> 숫자1</label>
+            <input type="text"  id="num1"
+                              name="num1"  readonly  class="form-control" />
+          </p>
+          <p class="my-4">
+            <label for="abc"> 연산자</label>
+            <input type="text"  id="abc"  name="abc" readonly  class="form-control" />
+          </p>
+          <p class="my-4">
+            <label for="num2"> 숫자2</label>
+            <input type="text"  id="num2"  name="num2" readonly class="form-control" />
+          </p>
+          <p class="my-4">
+            <label for="result1"> 결과확인</label>
+            <input type="text"  id="result1"  name="result1" readonly class="form-control" />
+          </p>
+      </fieldset>
+    </form>
+    <script>
+
+    //작업위치
+    </script>
+</div> <!-- end contianer  -->
+
+
+</body>
+</html>
