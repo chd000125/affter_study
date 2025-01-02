@@ -11,7 +11,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-      // 작업위치4
+      window.addEventListener('load', function(){ 
+    const byidex = document.getElementById("byidex");
+  byidex.addEventListener("click", function(click){
+    let color = prompt("당신이 좋아하는 색상은?", "예) 빨간색, red")
+    alert("당신이 좋아하는 색상은"+ color + "입니다.")
+    })
+  });
     </script>
 </head>
 <body>
@@ -35,8 +41,15 @@
   <div class="card-body">
     <h4>STEP1. document.getElementById</h4>
     <input type="button" value="ById"  id="byid" title="버튼을 클릭하세요.(js)" class="btn btn-outline-primary"      />
-    <script>
+    <script> //addEventListener + querySelector 이용해서 byid클릭하면 hoho 알림창 띄우기
   // 작업위치1
+  //const byidbutton = document.querySelector("#byid"); //querySelector -> css문법을 사용하기 때문에 # . 이런것이 붙음.
+  const byidbutton = document.getElementById("byid"); //getElementByid -> 아이디가 " "인 이라는 조건이 붙어있어서 id이름만 씀.
+      console.log(byidbutton);
+    byidbutton.addEventListener("click",function(mouseclick){
+      console.log(mouseclick);
+      alert("hoho");
+    });
     </script>
   </div>
   <!--     -->
@@ -47,6 +60,7 @@
     <input type="button"  value="ByIdEx-당신이좋아하는색상"  title="버튼4"  id="byidex"   class="btn btn-success" />
     <script>
   // 작업위치2
+  
     </script>
   </div>
 </div>
@@ -55,13 +69,29 @@
 <!--     -->
 <!--     -->
 <div class="container card  my-5">
-  <h3  class="card-header">005.선택자 - STEP2. window.addEventListener</h3>
+  <h3  class="card-header">005.선택자 - STEP2. window.addEventListener</h3> <!-- window.addEventListenert: 브라우저가 로딩이 될 때 불러옴. 위치 상관없이 동작. -->
   <div class="card-body">
     <h4>STEP2. window.addEventListener</h4>
     <input type="button"  value="addEventListener"  title="버튼4"  id="addEvent"    class="btn btn-outline-primary"    />
     <script>
         // 작업위치3
-    </script>
+        window.addEventListener('load', function(){
+        const addEvent = document.getElementById("addEvent");
+        console.log(addEvent)
+        addEvent.addEventListener('click', function(windowAddEvent){
+          alert('1')
+          console.log(addEvent)
+          alert('2')
+          console.log(addEvent)
+          alert('3')
+          console.log(addEvent)
+          alert('4')
+          console.log(addEvent)
+          alert('5')
+          console.log(addEvent)
+        })
+      })
+        </script>
   </div>
   <!--     -->
   <!--     -->
@@ -71,7 +101,23 @@
     <input type="button"  value="addEventEx-Five Count"  title="버튼5"  id="addEventEx"  class="btn btn-success" />
     <script>
       // 작업위치5
-    </script>
+      // 버튼5 마우스 올렸을 때 작업 위치 상관 없이 버튼의 배경색 바꾸기, 글자 사이즈 25px, 마우스 뗐을 때 좋아하는 배경색, 글자 사이즈 30px
+      window.addEventListener('load', function(){
+      const addEventEx = document.getElementById("addEventEx");
+      console.log(addEventEx);
+      addEventEx.addEventListener('mouseenter', function(){
+        addEventEx.style.backgroundColor="#ffffff";
+        addEventEx.style.fontSize="25px";
+        addEventEx.style.color="black";
+        console.log(addEventEx);
+      })
+      addEventEx.addEventListener('mouseleave',function(){
+        addEventEx.style.backgroundColor="#f3f4f4";
+        addEventEx.style.fontSize="30px";
+        console.log(addEventEx);
+      })
+    })
+      </script>
   </div>
 </div>
 
@@ -90,18 +136,68 @@
     </ul>
     <script>
       // 작업위치6
-    </script>
-    <script>
-      // 작업위치7
-    </script>
+      //step 1. #animal 선택 - getElementByid - ul
+      const animal = document.getElementById("animal");
+      console.log(animal);
+      //step 2. 동물들 (li)
+      const animalLi = animal.getElementsByTagName("li");
+      console.log(animalLi);
+      //step 3. 꾸미기 - color, backgroundColor
+      animalLi[0].style.backgroundColor="brown";
+      animalLi[0].style.color="white";
+      animalLi[2].style.backgroundColor="pink";
+      animalLi[2].style.color="black";
 
-    <ul id="color">
-      <li>RED</li>
-      <li id="orange">ORANGE</li>
-      <li id="gold">GOLD</li>
-    </ul>
+    </script>
     <script>
-      // 작업위치8
+      let animal2 = document.querySelector("#animal");
+      console.log(animal);
+      let lis = document.querySelectorAll("#animal li");
+      console.log(lis);
+      lis[1].style.backgroundColor="red";
+      console.log(lis[1]);
+
+    </script>
+    <ul>
+      <li>1</li>
+      <li>
+        <ul id="color">
+        <li>RED</li>
+        <li id="orange">ORANGE</li>
+        <li id="gold">GOLD</li>
+        </ul>
+      </li>
+    </ul>
+    <script> // HTML collection -> 태그처럼 불러와서 쓸 수 있다. //node ->
+      let color1 = document.querySelector("#color");
+      console.log(color1);
+      let color2 = document.getElementById("color");
+      console.log(color2);
+      //1. ul
+      //2. li
+      let clis1 = color1.children; //.children: 뭐가 들어가있는지 볼 수 있게 된다. HTML collection으로 만듬 == querySelectionAll
+      console.log(clis1);
+      let clis2 = color2.children;
+      console.log(clis2);
+
+      for (let i=0; i<clis2.length; i++) {
+        clis2[i].style.color="aqua";
+      }   
+      //3. parentElement - 부모 요소
+      let orange = document.querySelector("#orange");
+      console.log(orange);
+      orange.style.color="orange";
+      console.log(orange);
+      orange.parentElement.style.border="5px dotted green"; // Element와 html만 즉시 적용된 사항을 불러옴 node는 아님.
+      orange.parentElement.style.borderRadius="20px";
+      //4. 제일 가까운 상위 부모
+      let gold = document.querySelector("#gold");
+      gold.closest("ul").style.backgroundColor="gold"; // closest("??"): 가장 가까운 상위 부모 태그 ??를 찾아옴.
+      //5. 형제 요소
+      let bro = document.getElementById("orange"); // 안될 때는 let bro = document.getElementById("#orange") <- 사용용
+      bro.previousElementSibling.style.textAlign="center"; //previousElementSibling: 기준 이전 요소 가져오기
+      bro.nextElementSibling.style.textAlign="right"; //nextElementSibling: 기준 다음 요소 가져오기
+
     </script>
   </div>
   <!--     -->
@@ -115,9 +211,25 @@
       <li id="coconut">coconut</li>
     </ul>
     <script>
-      //Q1) document.getElementsByTagName 이용해서  모든 input 에 배경색 black, 글자색 white , 여백 10px주기
-      //Q2) document.getElementsById 이용해서 test2 선택 배경색 #ccc
-      //Q3) document.querySelector 이용해서 test3 선택 test3를 클릭하면 width:200px; 로 수정
+      let fruits1 = document.getElementById("fruits");
+      console.log(fruits1);
+      let fruits = fruits1.getElementsByTagName("li");
+      for (let i=0; i<3; i++) {
+      fruits[i].style.backgroundColor="black";
+      fruits[i].style.color="white";
+      fruits[i].style.margin="10px"; };
+      let banana = document.getElementById("banana");
+      banana.style.backgroundColor="#ccc";
+      let coconut = document.querySelector("#coconut");
+      coconut.addEventListener("click", function(){
+        coconut.style.width="200px";
+        coconut.style.trans
+      });
+      
+      //Q1) document.getElementsByTagName 이용해서  
+      // #fruits 안에 있는  모든li에 배경색 black, 글자색 white , 여백 10px주기
+      //Q2) document.getElementsById 이용해서 banana 선택 배경색 #ccc
+      //Q3) document.querySelector 이용해서 coconut 선택 test3를 클릭하면 width:200px; 로 수정
 
       // 작업위치9
     </script>
@@ -133,7 +245,7 @@
     <h4>STEP4. value, innerHTML </h4>
     <div class="row">
       <div class="col"><input type="text"    id="value_target"  class="form-control"
-                         placeholder="input에서는 value"  readonly/></div>
+                         placeholder="input에서는 value"  /></div> <!-- readonly: 입력을 못하게 막는 역할. -->
       <div class="col"><input type="button"  value="value"  title="value_target"  id="value"  class="btn btn-outline-primary" /></div>
     </div>
     <hr/>
@@ -144,6 +256,27 @@
 
     <script>
   // 작업위치10
+  // 1. 윈도우가 로딩이 마무리 되었을 때 - 작업의 위치 상관없이 작업
+  // 2. id="value" 버튼을 누르면, id="value_target"이 빈칸인지 확인, 안쪽에 Hello Javascript를 남김.
+  // 3. id="inner" 버튼을 누르면 class="inner_target" div태그 안에 Welcome Javascript를 남김.
+  window.addEventListener("load", function(){
+    let value = document.querySelector("#value");
+    value.addEventListener("click", function(){
+      let value_target = document.querySelector("#value_target");
+      console.log(value_target.value);
+      value_target.value = "Hello Javascript"
+      let inner = document.querySelector("#inner");
+      inner.addEventListener("click", function(){
+        let inner_target = document.querySelector(".inner_target");
+        if(value_target.value == "Hello Javascript"){
+          inner_target.innerHTML = "Welcome Javascript" //innerHTML: 값 세팅 alert(inner_target.innerHTML)->검색
+        } else {inner_target.inner = " "} 
+      });
+
+
+    });
+    
+  } )
     </script>
   </div>
   <!--     -->
@@ -158,7 +291,7 @@
     <div class="result_target  my-5">JAVASCRIPT</div>
 
     <pre>
-    브라우저가 로딩이 되면
+    브라우저가 로딩이 되면 <!-- window.addEventListener -->
     Q1) #test1를 클릭하면 본인이름 입력받고 입력받은 값 알림창 띄우기
     Q2) #test2를 클릭하면 #test2의 value값을 INPUT으로 수정
     Q3) #test3를 클릭하면
@@ -170,7 +303,31 @@
      https://www.w3schools.com/js/js_events.asp
     </pre>
     <script>
-
+      window.addEventListener("load",function(){
+      let test1 = document.getElementById("test1");
+      test1.addEventListener("click", function(){
+      /* name = prompt("당신의 이름은?","예) 홍길동");
+       alert("당신의 이름은 "+name+"입니다");*/
+       alert( prompt('당신의 이름은?') );
+      });
+      let test2 = document.getElementById("test2");
+      test2.addEventListener("click", function(){ 
+        test2.value = "input";
+      }); //태그가 INPUT인지 보기
+      let test3 = document.getElementById("test3");
+      test3.addEventListener("click", function(){
+        let result_target = document.querySelector(".result_target");
+        alert(result_target.innerHTML); //result_target을 innerHTML을 이용하여 값을 설정하고 alert로 송출 => <div class="result_target  my-5">JAVASCRIPT</div>의 JAVASCRIPT가 송출
+        result_target.innerHTML = "최현도"; //innerHTML로 값을 이름으로 변경 한 후 result_target에 저장
+      })
+      let test4 = document.getElementById("test4");
+      test4.addEventListener("mouseover", function(){
+        test4.style.backgroundColor="crimson";
+      });
+      test4.addEventListener("mouseout",function(){
+        test4.style.backgroundColor="black";
+      })
+    });
   // 작업위치11
     </script>
   </div>

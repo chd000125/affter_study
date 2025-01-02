@@ -71,6 +71,9 @@
     <input type="button"  value="DOG-멍멍"  title="버튼1"    class="btn btn-success"  onclick="alert('멍멍')"/>
     <input type="button"  value="CAT-야옹"  title="버튼2"    class="btn btn-success"  onclick="alert('야옹')"/>
     <input type="button"  value="FIVE-COUNT"  title="버튼3"   class="btn btn-success" onclick="alert('1'),alert('2'),alert('3'),alert('4'),alert('5')"/>
+    <input type="button" value="FIVE-COUNT-REPEAT" title="버튼4" class="btn btn-success" onclick="for (let i=1; i<6; i++){
+      alert(i);
+    }"/>
   </div>
  </div>
   <!--     -->
@@ -91,11 +94,11 @@
       //이벤트 대상
       box.addEventListener("click", function(clickingbox){
         console.log(clickingbox);
-        alert("Hello1")
+        alert("Hello1");
       } ); // addEventListener -> 이벤트를 여러개 걸 수 있음.
       box.addEventListener("click", function(clickingbox){
         console.log(clickingbox);
-        alert("Hello2")
+        alert("Hello2");
       } );
       box.addEventListener("mouseenter", function(clickingbox){
         box.style.backgroundColor="#ffffff"
