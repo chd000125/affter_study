@@ -20,8 +20,7 @@
         <h1>009. OBJECT  </h1>
         <ol>
             <li>array</li>
-            <li>object</li>
-            <li>ajax</li>
+            <li>object</li> 
         </ol>
     </div><!-- end navi  -->
 
@@ -47,33 +46,18 @@
           </pre>
           <script>
             console.log("사용법(1) 리터럴");
+            //let arr1 = [1,2,3]; //내가 필요한 데이터를 묶어서 쓸게요.
+            let arr1 = new Array(1,2,3); // let arr1 = [1,2,3]과 동일 함.
+            // arr1 -> [  1(0번째 칸) , 2(1번째 칸) , 3(2번째 칸) ]
+            console.log(arr1[0]); //1
+            console.log(arr1[1]); //2
+            console.log(arr1[2]); //3
 
-
-            console.log("사용법(2) 배열생성자");
+ 
 
       //작업위치
           </script>
-        </div>
-        <!--     -->
-        <!--     -->
-        <hr/>
-        <div class="card-body">
-          <h4>EX</h4>
-          <pre>
-            1) 배열이름 animal
-            dog, cat , duck, monkey  각각의 데이터 셋팅
-            for문으로 출력해주기
-
-            2) 배열이름 myCat
-            cat, alpha, 3, 경기도시흥
-            for+length문으로 출력해주기
-           </pre>
-           <script>
-            //let animal = ['dog', 'cat' , 'duck', 'monkey'];
-
-  //작업위치
-            </script>
-        </div>
+        </div> 
     </div><!-- end container  -->
 
 
@@ -99,88 +83,19 @@
             let obj = {1:'one', 2:'two',3:'three' };
            </pre>
            <script>
-
-  //작업위치
+            //작업위치
+            let obj1 = { 'one':1, 'two':2, 'three':3 };
+            console.log(obj1);
+            console.log(obj1['one']); //배열 형식으로 접근.
+            console.log(obj1.one); //obj1['one']과 동일
+            console.log(obj1.two);
+            console.log(obj1.three);
             </script>
         </div>
-        <!--     -->
-        <!--     -->
-        <hr/>
-        <div class="card-body">
-          <h4>EX</h4>
-          <pre>
-            Q1) car객체 만들기
-              차이름(name), 차색상(color), 년식(year)을 프로퍼티로 지정하기
-              좋아하는 값 넣으세요~!
-            Q2) score객체 만들기
-               국어(kor) , 영어(eng), 수학(math)을 프로퍼티로 지정하기
-               값 100 , 100, 99 넣고
-               총점, 평균 구하기
-               출력내용 : 총점 299
-                         평균 99.67
-            </pre>
-            <script>
-                //Q1  ver1
-
-                //Q2
-
-  //작업위치
-            </script>
-        </div>
+      
     </div><!-- end container  -->
 
 
-
-    <!--                -->
-    <!--                -->
-    <!--                -->
-    <br/>
-    <br/>
-    <br/>
-    <hr/>
-    <div class="container card  my-3">
-        <h3  class="card-header">009. OBJECT - STEP3. Ajax</h3>
-        <div class="card-body">
-          <h4>STEP1. Ajax-text   </h4>
-          <p><input type="button"  id="xml"
-              value="xmlHttpRequest1"  class="btn btn-outline-primary"  onclick="show1()"/></p>
-          <div class="alert alert-primary result r1"  id="result1"></div>
-          <script>
-
-  //작업위치
-          </script>
-        </div>
-        <!--     -->
-        <!--     -->
-        <hr/>
-        <div class="card-body">
-          <h4>STEP2. Ajax-json </h4>
-          <p><input type="button"  id="json"
-              value="xmlHttpRequest2"  class="btn btn-outline-primary"  onclick="show3()"/></p>
-          <div class="alert alert-primary result json1"  id="json2"></div>
-          <script>
-
-  //작업위치
-          </script>
-        </div>
-        <!--     -->
-        <!--     -->
-        <!--     -->
-        <!--     -->
-        <hr/>
-        <div class="card-body">
-          <h4>STEP3. Ajax-xml </h4>
-          <p><input type="button"  id="xml"
-              value="xmlHttpRequest2"  class="btn btn-outline-primary"  onclick="show5()"/></p>
-          <div class="alert alert-primary result xml1"  id="xml1"></div>
-          <script>
-
-  //작업위치
-          </script>
-        </div>
-        <!--     -->
-        <!--     -->
-    </div><!-- end container  -->
-
+ 
 </body>
 </html>
