@@ -99,7 +99,8 @@
   //작업위치
       let ex3 = document.getElementById("ex3");
       ex3.addEventListener("click", function(){
-        Spell = prompt("사과 스펠링을 적으세요.")
+        Spell = prompt("사과 스펠링을 적으세요.");
+        /*
         if (Spell =="apple"){
           alert("OK");
         } else if(Spell=="APPLE"){
@@ -108,8 +109,12 @@
           alert("OK");
         } else {
           alert("NOT OK");
+        }*/
+        if (Spell =="apple"  || Spell=="APPLE"|| Spell=="Apple"){ // || 또는
+          alert("OK");
+        } else {
+          alert("NOT OK");
         }
-        
       })
     </script>
   </div>
@@ -132,7 +137,8 @@
     let age = prompt("어린이의 나이를 입력하세요.");
     age = parseFloat(age);
     console.log(age)
-    if (0<=age<=5) {
+   // if (0<=age<=5) {
+    if (0<=age  && age<=5) { // &&그리고 
       alert("어린이의 나이는 " + age + "세 입니다.");
     } else {
       alert("0~5세 사이만 입력하세요");
@@ -294,7 +300,7 @@
       // for, while, do while
       //A1)		1	2	3	4	5
       let i =0;
-        while(i <= 5 ){i=i+1;}
+        while(i <= 5 ){i=i+1; } 
 
       //A2)		5	4	3	2	1
 

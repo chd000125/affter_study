@@ -34,7 +34,23 @@
     </div>
      <script>
   //작업위치
-      
+      window.addEventListener("load", function(){
+        //선택자 id="blank"를 누르면 blank_target이 빈칸인지 검사
+        // step1) id="blank", id="blank_target" 가져오기 console.log();로 확인인
+        // step2) id="blank" 클릭시 알림창 띄우기기
+        let blank = document.getElementById("blank");
+        let blank_target = document.getElementById("blank_target");
+        console.log(blank);
+        console.log(blank_target);
+        blank.addEventListener("click", function(){
+          //blank_target.value가 빈칸이라면 빈칸입니다. 알림창 띄우기.
+          //alert(blank_target.value); //alert("haha");
+          if(blank_target.value == "") {
+            alert("빈칸입니다.")
+            blank_target.focus(); //blank_target에 커서가 가도록 함.
+          } console.log(blank_target.value);
+        })
+      })
      </script>
     </div><!-- end card-body  -->
   <!--     -->
@@ -67,9 +83,28 @@
     </form>
     <script>
     // Q1. #divide 버튼을 클릭하면 빈칸검사
-    //   이벤트대상        이벤트   이벤트핸들러
+    //   이벤트대상(divide)        이벤트(클릭했을 때)    이벤트핸들러(빈칸검사.)
 
     // Q2. 빈칸이 아니라면 소수점 둘째자리 나누기 결과를 출력함.
+    let divide = document.getElementById("divide");
+    let one = document.getElementById("one");
+    let two = document.getElementById("two");
+    let result = document.getElementById("result"); //가져오기
+    divide.addEventListener("click", function(){
+      if(one.value == ""){
+        alert("숫자를 입력해주세요.");
+        one.focus();
+        return false;
+      }else if(two.value == ""){
+        alert("숫자를 입력해주세요.");
+        two.focus();
+        return false;
+      } // 입력부
+      console.log(one.value,two.value); //one과 two의 value값이 잘 들어갔는지 확인
+      console.log(one.value/two.value); // one과 two의 계산이 잘 됐는지 확인
+      console.log(  ( one.value/two.value).toFixed(2)    ); //계산부 toFixed(n) : n번째 자리까지 소수점 표시
+      result.value = (one.value/two.value).toFixed(2); //결과 부
+    })
 
     </script>
   </div><!-- end card-body  -->
@@ -88,8 +123,26 @@
     <h4>STEP2. css 적용 </h4>
     <input type="button" value="네비게이터"  id="fn_css"  title="버튼을 클릭하세요" class="btn btn-outline-primary"      />
      <script>
+       //작업위치상관없이 브라우저 로딩
+       //step1. 대상 id="fn_css" 찾기
+       //step2. id="fn_css" 클릭했을 때 본인 이름 알림창 띄우기
+       window.addEventListener("load", function(){
+        let fn_css = document.getElementById("fn_css");
+        fn_css.addEventListener("click", function(){
+          alert("css적용 확인");
+          //step3. 클래스 적용확인
+          console.log(fn_css.classList); //class에 어떤 것이 있는지 검사.
+          console.log(fn_css.classList.contains("btn-outline-primary")); //class btn-outline-primary가 포함 되어있는지 검사.
+          if(fn_css.classList.contains("btn-outline-primary")) {
+            fn_css.classList.remove("btn-outline-primary");
+            console.log(fn_css.classList);
+          } else {
+            fn_css.classList.add("btn-outline-primary");
+            console.log(fn_css.classList);
+          }
+        })
+       })
 
-       //작업위치
      </script>
     </div><!-- end card-body  -->
   <!--     -->
@@ -103,8 +156,21 @@
     </pre>
     <input type="button" value="SUCCESS-DANGER TOGGLE"  id="fn_css_test"  title="버튼을 클릭하세요" class="btn btn-outline-success"      />
     <script>
-
       //작업위치
+      window.addEventListener("load", function(){
+        let fn_css_test = document.getElementById("fn_css_test");
+        fn_css_test.addEventListener("click", function(){
+          if(fn_css_test.classList.contains("btn-outline-success")){
+            fn_css_test.classList.remove("btn-outline-success");
+            fn_css_test.classList.add("btn-outline-danger");
+            console.log(fn_css_test.classList);
+          } else if(fn_css_test.classList.contains("btn-outline-danger")){
+            fn_css_test.classList.remove("btn-outline-danger");
+            fn_css_test.classList.add("btn-outline-success");
+            console.log(fn_css_test.classList);
+          }
+        })
+      })
     </script>
   </div><!-- end card-body  -->
 </div><!-- end container  -->
