@@ -32,8 +32,21 @@
     2.  function 사용   - 함수이름();
     </pre>
 		<input type="button"  value="FUNCTION1"  title="FUNCTION"  id="fn1"   class="btn btn-outline-primary" />
+    <!-- type: 어떤 것을 쓸 건지 value: 쓰는 것 안에 들어가는 값(ex. 버튼안에 값) title: 부제목 id: 이 input태그의 이름태그 class: 어떤 기능을 하게 할 것 인지. -->
     <script>
   // 작업위치1
+  // 이벤트대상 - 이벤트 - 이벤트 핸들러(이벤트 종류)
+  //브라우저 로딩 - 작업위치에 상관없이 사용할 수 있게.
+  //2. id = "fn1" 클릭하면 알림창 GOOD! (alert)
+  window.addEventListener("load", function(){
+    let fn1 = document.querySelector("#fn1"); //let fn1 = document.getElementById("fn1");
+    fn1.addEventListener("click", function(){
+      //alert("GOOD!");
+      fnc1();
+    })
+  })
+  function fnc1() { alert("GOOD!"); } //step1. 함수선언 기능을 함. fn1()을 부르면 {}안의 내용을 처리함.
+  // 이름이 달려있는 "명시적"함수는 전역변수처럼 먼저 로딩됨.
   </script>
   </div>
   <!--     -->
@@ -50,6 +63,20 @@
       <script>
 
   // 작업위치2
+        window.onload = function(){
+          let fn2 = document.getElementById("fn2");
+          fn2.addEventListener("click",function(){
+            /*for (let i = 1; i <6; i++) {
+              alert(i);
+            };*/
+            func2();
+          })
+        }
+        function func2() {
+          for (let i = 1; i <6; i++) {
+              alert(i);
+            };
+        };
       </script>
   </div>
 </div>
@@ -61,10 +88,20 @@
   <h3  class="card-header">006. FUNCTION - STEP2. a 태그에서 event</h3>
   <div class="card-body">
     <h4>STEP2. a 태그에서 event </h4>
-		<a href="https://www.naver.com/"   class="btn btn-outline-primary target_a" >EVENT</a>
+		<a href="https://www.naver.com/"   class="target_a btn btn-outline-primary" >EVENT</a>
     <script>
-
+      // class = "target_a"를 누르면 hello~ js! 알림창 띄우기
   // 작업위치3
+      //a 태그에 이벤트 연결시 주의사항 => 기본적으로 href걸어둔 걸로 넘어가는 것이 a태그 속성성
+      let target_a = document.querySelector(".target_a");
+      console.log(target_a);
+      target_a.addEventListener("click", function(e){ // function (이름) {} -> 익명적 함수(일회용)
+        e.preventDefault(); //preventDefault -> 기본 속성을 실행하지 않겠다. -> a태그의 href기본 속성을 실행하지 않음.
+        console.log(e);
+        //alert("Hello~ JS!");
+        func3();
+      })
+      function func3() { alert("Hello~ JS!"); };
     </script>
   </div>
   <!--     -->
@@ -72,6 +109,9 @@
   <hr/>
   <div class="card-body">
     <h4>STEP3. a 태그에서 event 사용예</h4>
+    <pre>
+
+    </pre>
     <div class=" w-25  bg-primary    rounded  p-2 text-white  text-center ">
       <h1>Score   <span class="target_num">0</span></h1>
     </div>
@@ -80,8 +120,24 @@
       <a href="#" class="btnMinus  btn btn-outline-primary">minus</a>
     </div>
     <script>
-
   // 작업위치4
+  /*  */
+        window.addEventListener("load", function(){
+        let target_num = document.querySelector(".target_num");// 대상 태그가 input이 아니면 innerHTML
+        let plus = document.querySelector(".btnPlus"); //이벤트 대상이 a인지 아닌지. a였다면 e.preventDefault를 걸어서 href를 무효.
+        let minus = document.querySelector(".btnMinus");
+        plus.addEventListener("click", function(){
+          console.log(target_num.innerHTML); //값 검사.
+          target_num.innerHTML = ++target_num.innerHTML;  //target_num.innerHTML++
+          console.log(target_num);
+        })
+        minus.addEventListener("click",function(){
+          target_num.innerHTML = --target_num.innerHTML; //target_num.innerHTML--
+          console.log(target_num);
+        })
+      })
+
+        
     </script>
   </div>
   <!--     -->
@@ -97,8 +153,28 @@
       <a href="#" class="btnRight  btn btn-outline-success">RIGHT ROTATE</a>
     </div>
     <script>
-
   // 작업위치5
+      window.addEventListener("load", function(){
+      let left = document.querySelector(".btnLeft"); //이벤트 대상 a
+      let right = document.querySelector(".btnRight");
+      let target_box = document.querySelector(".target_box"); //대상 innerHTML
+      let num = 0;
+      left.addEventListener("click", function(e){
+        e.preventDefault();
+        //target_box.style.transform += "rotate(45deg)"; //+= : 누적 코드 현재 값에서 더 증감감
+        target_box.style.transform += 'rotate(${++num*45}deg)';
+        console.log(target_box);
+        //leftbtn() = target_box.style.transform += "rotate(45deg)";
+      })
+      right.addEventListener("click", function(e){
+        e.preventDefault();
+        target_box.style.transform += "rotate(-45deg)";
+        console.log(target_box);
+        // rightbtn() = target_box.style.transform += "rotate(-45deg)";
+      })
+    })
+    //function leftbtn() { target_box.style.transform += "rotate(45deg)"; } // 파일 분리가 가능.
+    //function rightbtn() { target_box.style.transform += "rotate(-45deg)"; }
     </script>
   </div>
 </div>

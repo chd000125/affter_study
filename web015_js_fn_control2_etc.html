@@ -37,11 +37,28 @@
       평균을 입력하세요 __입력받기
       만약 평균이 60점 이상(60점포함)이라면 합격, 아니면 불합격 출력
       합격에서 평균점수가 60점대라면 ★ 6개,  70점대라면 ★ 7개...
-      평균점수 앞자리수 만큼 ★ 도 같이 출력력
+      평균점수 앞자리수 만큼 ★ 도 같이 출력
     </pre>
     <input type="button" value="ex1"  id="ex1"  title="버튼을 클릭하세요" class="btn btn-danger"      />
     <script>
    //작업위치
+      window.addEventListener("load",function(){
+    let ex1 = document.getElementById("ex1");
+    ex1.addEventListener("click", function(){
+      let score1 = prompt("당신의 평균 점수는?", "ex) 숫자만 기입")
+      score1 = parseFloat(score1); //parseFloat -> 문자열을 숫자로 바꿔줌.
+      let star = score1/10;
+      if (isNaN(score1)) {
+        alert("숫자만 입력해주세요")
+        return;
+      }
+    if (score1 >= 60) {
+      alert("합격" + '★'.repeat(star)); // '문자'.repeat() -> 문자를 ()안의 숫자만큼 반복.
+    } else {
+      alert("불합격");
+    }
+  })
+  })
     </script>
   </div>
   <!--     -->
@@ -56,6 +73,15 @@
     <input type="button" value="ex2"  id="ex2"  title="버튼을 클릭하세요" class="btn btn-danger"      />
     <script>
   //작업위치
+      let ex2 = document.querySelector("#ex2");
+      ex2.addEventListener("click", function(){
+        spell = prompt("사과 스펠링을 입력하세요.")
+        if (spell =="apple"){
+          alert("OK");
+        } else {
+          alert("NOT OK");
+        }
+      })
     </script>
   </div>
   <!--     -->
@@ -71,6 +97,20 @@
     <input type="button" value="ex3"  id="ex3"  title="버튼을 클릭하세요" class="btn btn-danger"      />
     <script>
   //작업위치
+      let ex3 = document.getElementById("ex3");
+      ex3.addEventListener("click", function(){
+        Spell = prompt("사과 스펠링을 적으세요.")
+        if (Spell =="apple"){
+          alert("OK");
+        } else if(Spell=="APPLE"){
+          alert("OK");
+        } else if(Spell=="Apple") {
+          alert("OK");
+        } else {
+          alert("NOT OK");
+        }
+        
+      })
     </script>
   </div>
 
@@ -87,6 +127,17 @@
     <input type="button" value="ex4"  id="ex4"  title="버튼을 클릭하세요" class="btn btn-danger"      />
     <script>
   //작업위치
+  let ex4 = document.getElementById("ex4");
+  ex4.addEventListener("click", function(){
+    let age = prompt("어린이의 나이를 입력하세요.");
+    age = parseFloat(age);
+    console.log(age)
+    if (0<=age<=5) {
+      alert("어린이의 나이는 " + age + "세 입니다.");
+    } else {
+      alert("0~5세 사이만 입력하세요");
+    }
+  })
     </script>
   </div>
 
@@ -131,8 +182,26 @@
     </pre>
     <input type="button" value="switch1"  id="switch1"  title="버튼을 클릭하세요" class="btn btn-danger"      />
     <script>
-
   //작업위치
+      let switch1 = document.getElementById("switch1");
+      switch1.addEventListener("click",function(){
+        let icecream = prompt("4,5,6중에 입력하세요.");
+        switch(Number(icecream)){
+          case 4:
+            alert("월드콘");
+            break;
+          case 5:
+            alert("구구콘");
+            break;
+          case 6:
+            alert("설레임");
+            break;
+          default:
+            alert("4,5,6중에 입력해주세요.");
+            break;
+        }
+      })
+  
     </script>
   </div>
   <!--     -->
@@ -146,8 +215,20 @@
     </pre>
     <input type="button" value="switch2"  id="switch2"  title="버튼을 클릭하세요" class="btn btn-danger"      />
     <script>
-
   //작업위치
+      let switch2 = document.getElementById("switch2");
+      switch2.addEventListener("click", function(){
+        let fruits = prompt("a,b,c 중에 입력하세요");
+        switch(fruits) {
+          case 'A' : 
+          case 'a' : alert("Apple"); break;
+          case 'B' : 
+          case 'b' : alert("Banana"); break;
+          case 'C' : 
+          case 'c' : alert("Coconut"); break;
+          default: alert("a,b,c중에 입력하세요."); break;
+        }
+      })
     </script>
   </div>
 </div>
@@ -212,6 +293,8 @@
     <script>
       // for, while, do while
       //A1)		1	2	3	4	5
+      let i =0;
+        while(i <= 5 ){i=i+1;}
 
       //A2)		5	4	3	2	1
 

@@ -33,6 +33,12 @@
     <h4>Step1. IF</h4>
       <script>
   // 작업위치
+  // if (조건) {조건이 맞으면 실행}
+  // else{조건이 맞지 않으면 실행}
+  let if1 = 1;
+  if( if1 == 1){console.log("1이다")}
+  else{console.log("1이 아니다.")}
+
       </script>
   </div>
   <!--     -->
@@ -46,7 +52,23 @@
     </pre>
     <input type="button" value="ex1"  id="ex1"  title="버튼을 클릭하세요" class="btn btn-success"      />
     <script>
-  // 작업위치
+      let ex1 = document.getElementById("ex1");
+      ex1.addEventListener("click", function(){
+        score = prompt("당신의 점수는?", "숫자만 입력");
+        score = parseFloat(score);
+        ifFunc(); 
+      })
+      function ifFunc(){
+        if (isNaN(score)){
+          alert("숫자만 입력하세요.")
+          return;
+        } 
+        if (score >= 60) {
+          alert("합격");
+        } else {
+          alert("불합격")
+        }
+      }
     </script>
   </div>
 </div>
@@ -70,6 +92,7 @@
       } */
 
   // 작업위치
+
       </script>
   </div>
   <!--     -->
@@ -85,6 +108,24 @@
     <script>
 
   // 작업위치
+  let switch1 = document.getElementById("switch1");
+  switch1.addEventListener("click", function(){
+    Num = prompt("4,5,6중에 입력하세요.") //prompt는 무조건 문자열로 저장함.
+    switch(Number(Num)) {
+      case 4 :
+        alert("월드콘");
+        break;
+      case 5:
+        alert("구구콘");
+        break;
+      case 6 :
+        alert("설레임");
+        break;
+      default:
+        alert("4,5,6중에 입력하세요.")
+        break;
+    }
+  })
     </script>
   </div>
 </div>
@@ -109,10 +150,30 @@
 
         STEP3 do while- 한번은 실행을 해야할때
         초기문;
-        do{     증감문;  } while(  조건문 );
+        do{    증감문;  } while(  조건문 );
 
         STEP4 향상된 for
         for( index  in 객체 ){   }*/
+        console,log("step0-basic");
+        console,log(1); //시작
+        console,log(2); //1개씩 증가
+        console,log(3); //종료
+
+
+        //1. 영역 : 복붙-복사하는 한줄 {반복되는 영역} - {console.log(1)}
+        //2. 변수 : {반복 영역 - 변수}  - console.log(I);
+        //3. 패턴 : for{시작; 종료; 변화} - 
+        console.log("step1-for");
+       for(let i =1; i <= 3; i++) {console.log(i);}
+
+        console.log("step2-for");
+        for (let i=1; i<= 10; i++) {console.log(i);}
+
+        console.log("step3-for");
+        for (let i=3; i<=8; i++) {console.log(i);}
+
+        console.log("step4-for");
+        for (let i=1; i <=5; i=i+2){console.log(i);}
 
 
   // 작업위치
