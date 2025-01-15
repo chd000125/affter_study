@@ -1,7 +1,7 @@
 package com.company.day001;
 import java.util.Scanner;
 
-public class B001_1 {
+public class B001_mini {
 	public static void main(String[] args) {
 		Object [][] user = {
 				  {  "" , "" , "" } ,   // id, pass, balance 
@@ -40,9 +40,9 @@ public class B001_1 {
 		if (listNo == 1) {
 			System.out.println("======추가======");
 			System.out.print("아이디 >> ");
-			id = sc.next();
+			user[][] = sc.next();
 			System.out.print("비밀번호 >>");
-			pw = sc.next();
+			user[][] = sc.next();
 			System.out.print("나이 >>");
 			age = sc.nextInt();
 			System.out.print("금액 >>");
@@ -54,13 +54,13 @@ public class B001_1 {
 			for (;;) {
 			System.out.print("아이디 >> ");
 			idCheck = sc.next();
-			if(!(idCheck.equals(id))) {
+			if(!(idCheck.equals(user[][]))) {
 				System.out.println("아이디를 정확하게 입력해주세요.");
 				continue;} break; }
 			for (;;) {
 			System.out.print("비밀번호 >> ");
 			pwCheck = sc.next();
-			if (!(pwCheck.equals(pw))) {
+			if (!(pwCheck.equals(user[][]))) {
 				System.out.println("비밀번호를 정확하게 입력해주세요.");
 				continue;} break; }
 			if ((pwCheck.equals(pw)) && (idCheck.equals(id))) {
