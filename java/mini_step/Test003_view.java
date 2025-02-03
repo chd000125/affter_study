@@ -1,4 +1,4 @@
-package mini_step;
+package com.company.mini_step;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
