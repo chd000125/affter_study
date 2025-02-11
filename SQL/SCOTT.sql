@@ -1,0 +1,4 @@
+DESC EMP
+
+SELECT *FROM EMP;
+

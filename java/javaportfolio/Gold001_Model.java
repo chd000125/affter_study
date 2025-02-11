@@ -1,8 +1,7 @@
-package com.company.javaportfolio;
+package com.company.test;
 
-	import java.util.ArrayList;
-	import java.util.Iterator;
-
+import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.JOptionPane;
 
 public class Gold001_Model {
