@@ -1,4 +1,4 @@
-package com.company.test;
+package com.company.javaportfolio;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,6 +11,12 @@ public class GoldUpdate implements GoldProcess{
 	public void exec(ArrayList<GoldUser> users) {
 
 		System.out.println("유저수정");
+		//1. 임시 아이디와 임시 비밀번호 입력받기 READ기능 사용
+		//2. 확인이 되었다면 그 정보가 있는 줄 찾기
+		//3. 바꿀 아이디 입력하기 + 중복확인
+		//4. 변경할 비밀번호 입력받기
+		//5. 변경할 이메일 입력받기
+		//6. 변경사항 저장.
 		/*
 		Iterator<GoldUser> iter = users.iterator();
 		while ( iter.hasNext() ) {

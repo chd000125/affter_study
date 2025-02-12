@@ -1,4 +1,4 @@
-package com.company.test;
+package com.company.javaportfolio;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -15,7 +15,6 @@ public class GoldRead implements GoldProcess{
 		//입력 임시 아이디, 비밀번호 입력받기
 		//처리 기능1) 유저확인   /   기능2)
 		//출력 
-		
 		String r_id = JOptionPane.showInputDialog("아이디를 입력해주세요.");
 		String r_pw = JOptionPane.showInputDialog("비밀번호를 입력해주세요.");
 		Iterator<GoldUser> iter = users.iterator();

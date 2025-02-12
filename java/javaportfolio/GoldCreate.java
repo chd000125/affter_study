@@ -1,4 +1,4 @@
-package com.company.test;
+package com.company.javaportfolio;
 
 import java.util.ArrayList;
 import java.util.Iterator;

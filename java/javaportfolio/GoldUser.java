@@ -1,10 +1,9 @@
-package com.company.test;
+package com.company.javaportfolio;
 
 import java.util.Calendar;
 
 public class GoldUser {
    public static int cnt = 1;
-   private String etc;
    private int no;
    private String userName;
    private String pass;

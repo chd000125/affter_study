@@ -69,3 +69,9 @@ public class JDBC005_PreparedStatement {
 	}
 }
 // emp 테이블에서 ename = 'SCOTT' 정보 출력
+/*
+ 
+
+
+
+*/
