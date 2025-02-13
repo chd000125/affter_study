@@ -41,15 +41,16 @@ public class UserView_crud {
 		scroll = new JScrollPane(table);
 		// 배경, 폰트색상, 사이즈
 		for(int i=0; i<button.length; i++) {
-			button[i].setBackground(Color.RED);
+			button[i].setBackground(new Color(239,62,92));
 			button[i].setForeground(Color.white);
 			button[i].setFont(new Font( Font.DIALOG  ,  Font.PLAIN  ,  16));
 			//btns[i].setPreferredSize( new Dimension(100,60) );
 		}
 		/// 색상지정
-		table.setBackground( new Color( 255,200,200 ));   //  red(0~255) , green(0~255), blue(0~255)   # ver-....
+		//table.getRootPane().setBackground(new Color(255,255,255)); 
+		//table.setBackground( new Color( 255,200,200 ));   //  red(0~255) , green(0~255), blue(0~255)   # ver-....
 		table.setRowHeight(25);
-		table.setOpaque(true);
+		table.setOpaque(false);
 		
 		table.getTableHeader().setReorderingAllowed(false);  // 컬럼이동방지
 		

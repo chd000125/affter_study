@@ -24,15 +24,36 @@ public class UserDelete implements UserProcess{
 
 	@Override
 	public void exec(ArrayList<UserInfo> users, UserView_crud crud) {
-		int no = Integer.parseInt(JOptionPane.showInputDialog("삭제할 번호를 입력해주세요."));
-		int find = -1; int cnt = 0;
-		Iterator<UserInfo> iter = users.iterator(); // 줄서기
-		while(iter.hasNext()) {// 데이터 존재 유무확인
-			if(iter.next().getNo() == no ) {find = cnt; iter.remove(); break;}
-			cnt ++; // iterator는 index카운트 어려움.
-		}
-		if(find == -1) {JOptionPane.showMessageDialog(null, "번호를 확인해주세요"); return;}
+		//1. 수정할 유저번호 입력받기
+		int  no = Integer.parseInt(JOptionPane.showInputDialog("수정할 번호를 입력해주세요"));
 		
+		//2. model( 저장소 ) - 해당번호의 데이터 찾아서 삭제
+		int find=-1;    int cnt=0;
+		Iterator<UserInfo>  iter = users.iterator();  //1. 줄을 서시오
+		while(iter.hasNext()) {//2. 해당데이터 있는지 확인
+			if( iter.next().getNo() == no  ) { find=cnt;  iter.remove();   break; } //3. 꺼내와서 삭제
+			cnt++;   // iterator는 index카운트 어려움!
+		}
+		if( find==-1 ) { JOptionPane.showMessageDialog(null,"번호를 확인해주세요"); return; }
+		 
+		//3. view - 데이터 처리
 		crud.model.removeRow(cnt);
 	}
+
+	@Override
+	public void exec(UserView_crud crud) {
+		//1. 삭제할 유저번호 입력받기
+		int no = Integer.parseInt(JOptionPane.showInputDialog("삭제할 번호를 입력해주세요. "));
+		//2. db에서 삭제
+		UserDao dao = new UserDao();
+		dao.getConnection();
+		dao.delete(no);
+		//3. 화면처리
+		new UserRead().exec(crud);
+		
+	}
 }
+
+
+
+

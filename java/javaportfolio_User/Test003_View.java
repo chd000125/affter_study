@@ -1,8 +1,11 @@
 package com.company.javaportfolio_User;
+
  
 public class Test003_View {
 	public static void main(String[] args) {
-		//new UserView_intro().show();
+		
+		//ver-1   new UserView_intro().show();
+		//ver-2
 		UserView_crud crud = new UserView_crud();
 		crud.show();
 		
