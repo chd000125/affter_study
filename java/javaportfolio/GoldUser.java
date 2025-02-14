@@ -37,11 +37,11 @@ public class GoldUser {
    public int getNo() { return no; }
    public void setNo(int no) { this.no = no; }
    public String getUserName() { return userName; }
-   public void setUserName(String userName) { userName = userName; }
+   public void setUserName(String userName) { this.userName = userName; }
    public String getUserEmail() { return userEmail; }
-   public void setUserEmail(String userEmail) { userEmail = userEmail; }
+   public void setUserEmail(String userEmail) { this.userEmail = userEmail; }
    public int getUserMoney() { return userMoney; }
-   public void setUserMoney(int userMoney) { userMoney = userMoney; }
+   public void setUserMoney(int userMoney) { this.userMoney = userMoney; }
    public String getDate() { return date; }
    public void setDate(String date) { this.date = date; }
    public String getPass() { return pass; }
